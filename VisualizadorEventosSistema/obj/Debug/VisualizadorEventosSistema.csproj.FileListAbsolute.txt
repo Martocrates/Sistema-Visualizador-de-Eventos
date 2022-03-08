@@ -1,0 +1,7 @@
+C:\Users\52999\source\repos\VisualizadorEventosSistema\VisualizadorEventosSistema\bin\Debug\VisualizadorEventosSistema.exe.config
+C:\Users\52999\source\repos\VisualizadorEventosSistema\VisualizadorEventosSistema\bin\Debug\VisualizadorEventosSistema.exe
+C:\Users\52999\source\repos\VisualizadorEventosSistema\VisualizadorEventosSistema\bin\Debug\VisualizadorEventosSistema.pdb
+C:\Users\52999\source\repos\VisualizadorEventosSistema\VisualizadorEventosSistema\obj\Debug\VisualizadorEventosSistema.csproj.AssemblyReference.cache
+C:\Users\52999\source\repos\VisualizadorEventosSistema\VisualizadorEventosSistema\obj\Debug\VisualizadorEventosSistema.csproj.CoreCompileInputs.cache
+C:\Users\52999\source\repos\VisualizadorEventosSistema\VisualizadorEventosSistema\obj\Debug\VisualizadorEventosSistema.exe
+C:\Users\52999\source\repos\VisualizadorEventosSistema\VisualizadorEventosSistema\obj\Debug\VisualizadorEventosSistema.pdb
