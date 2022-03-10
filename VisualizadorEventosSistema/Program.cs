@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VisualizadorEventosSistema
 {
@@ -11,13 +6,16 @@ namespace VisualizadorEventosSistema
     {
         static void Main(string[] args)
         {
-            Lectura_ArchivoTXT.lecturaArchivo();
+            CalculaTiempo miTiempoEvento = new CalculaTiempo();
+            Lectura_ArchivoTXT miArchivoEventos = new Lectura_ArchivoTXT();
+            Lectura_Evento informacionEvento = new Lectura_Evento(miTiempoEvento);
 
-            SeparadorFechasEventos informacionMiEvento = new SeparadorFechasEventos();
+            miArchivoEventos.lecturaArchivo("eventos");
+                       
+            SeparadorFechasEventos informacionMiEvento = new SeparadorFechasEventos(miArchivoEventos,informacionEvento);
             informacionMiEvento.BuscaFechasEventos();
 
             Console.ReadLine();
-            
         }
     }
 }

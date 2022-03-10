@@ -7,6 +7,7 @@ namespace VisualizadorEventosSistema
         int diferenciaDias;
         int diferenciaHoras ;
         int diferenciaMinutos;
+        int tiempoActualFaltanteParaTiempoActual = 0;
         public void setDiferenciaHoraria(int diferenciaMeses, int diferenciaDias,
                                         int diferenciaHoras, int diferenciaMinutos)
         {
@@ -18,10 +19,10 @@ namespace VisualizadorEventosSistema
 
         private void CalculaMeses()
         {
-            if (diferenciaMeses > 0 ) {
+            if (diferenciaMeses > tiempoActualFaltanteParaTiempoActual) {
                 Console.WriteLine(" Ocurrira en " + diferenciaMeses + " meses");
             }
-            if (diferenciaMeses < 0)
+            if (diferenciaMeses < tiempoActualFaltanteParaTiempoActual)
             {
                 Console.WriteLine(" Ocurrio hace " + diferenciaMeses *-1 + " meses");
             }
@@ -29,13 +30,13 @@ namespace VisualizadorEventosSistema
 
         private void CalculaDias()
         {
-            if (diferenciaMeses == 0)
+            if (diferenciaMeses == tiempoActualFaltanteParaTiempoActual)
             {
-                if (diferenciaDias > 0)
+                if (diferenciaDias > tiempoActualFaltanteParaTiempoActual)
                 {
                     Console.WriteLine(" Ocurrira en " + diferenciaDias + " dias");
                 }
-                if (diferenciaDias < 0)
+                if (diferenciaDias < tiempoActualFaltanteParaTiempoActual)
                 {
                     Console.WriteLine(" Ocurrio hace " + diferenciaDias * -1 + " dias");
                 }
@@ -45,11 +46,11 @@ namespace VisualizadorEventosSistema
 
         private void CalculaHoras()
         {
-            if(diferenciaHoras>0)
+            if(diferenciaHoras > tiempoActualFaltanteParaTiempoActual)
             {
                 Console.WriteLine(" Ocurrira en " + diferenciaHoras + " horas");
             }
-            if (diferenciaHoras < 0)
+            if (diferenciaHoras < tiempoActualFaltanteParaTiempoActual)
             {
                 Console.WriteLine(" Ocurrio hace " + diferenciaHoras * -1 + " horas");
             }
@@ -57,33 +58,26 @@ namespace VisualizadorEventosSistema
 
         private void CalculaMinutos()
         {
-            if (diferenciaMinutos > 0)
+            if (diferenciaMinutos > tiempoActualFaltanteParaTiempoActual)
             {
                 Console.WriteLine(" Ocurrira en " + diferenciaMinutos + " minutos");
             }
-            if (diferenciaMinutos < 0)
+            if (diferenciaMinutos < tiempoActualFaltanteParaTiempoActual)
             {
                 Console.WriteLine(" Ocurrio hace " + diferenciaMinutos * -1 + " minutos");
             }
         }
-        public void TiempoConcurridoEnEventos()
-        { /*
-            Console.WriteLine("\n===================================================");
-            Console.WriteLine(" diferenciaMeses: " + diferenciaMeses + " meses");
-            Console.WriteLine(" diferenciaDias: " + diferenciaDias + " dias");
-            Console.WriteLine(" diferenciaHoras: " + diferenciaHoras + " horas");
-            Console.WriteLine(" diferenciaMinutos:" + diferenciaMinutos + " minutos");
-            Console.WriteLine("===================================================");
-            */
+        public void CalculaTiempoConcurridoEnEventos()
+        {
             //Calcula tiempo
             CalculaMeses();
             CalculaDias();
 
-            if(diferenciaDias ==0 && diferenciaMeses == 0)
+            if(diferenciaDias == tiempoActualFaltanteParaTiempoActual && diferenciaMeses == tiempoActualFaltanteParaTiempoActual)
             {
                 CalculaHoras();
 
-                if (diferenciaHoras == 0)
+                if (diferenciaHoras == tiempoActualFaltanteParaTiempoActual)
                 {
                     CalculaMinutos();
                 }

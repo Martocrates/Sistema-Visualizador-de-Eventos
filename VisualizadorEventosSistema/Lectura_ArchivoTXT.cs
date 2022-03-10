@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 namespace VisualizadorEventosSistema
 {
     public class Lectura_ArchivoTXT
     {
-      static ArrayList lineasArchivoTXT = new ArrayList();
-        public static void lecturaArchivo()
+      ArrayList lineasArchivoTXT = new ArrayList();      
+        public void lecturaArchivo(string NombreArchivo)
         {
-            String linea;
+            string ArchivoNombre;
+            ArchivoNombre = NombreArchivo;
+            string linea;
             try
             {
-                StreamReader miLector = new StreamReader("eventos.txt");
+                StreamReader miLector = new StreamReader(ArchivoNombre+".txt");
                 do
                 {
                     linea = miLector.ReadLine();
@@ -32,7 +33,6 @@ namespace VisualizadorEventosSistema
                // Console.WriteLine("Executing finally block.");
             }
         }
-
         public ArrayList getArrayListLineasArchivoTXT()
         {
             return lineasArchivoTXT;

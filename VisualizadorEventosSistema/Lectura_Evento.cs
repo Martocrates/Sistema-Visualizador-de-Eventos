@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 
 namespace VisualizadorEventosSistema
 {
     public class Lectura_Evento : Datos_Evento
     {
-       
-        CalculaTiempo miTiempoEvento = new CalculaTiempo();
+
+        CalculaTiempo miTiempoEvento;
+
+        public Lectura_Evento(CalculaTiempo miTiempoEvento)
+        {
+            this.miTiempoEvento = miTiempoEvento;
+        }
    
         public void lecturaFechaEvento(string fechaEvento)
         {
@@ -22,21 +24,17 @@ namespace VisualizadorEventosSistema
 
             miTiempoEvento.setDiferenciaHoraria(diferenciaMeses, diferenciaDias, diferenciaHoras, diferenciaMinutos);
 
-            miTiempoEvento.TiempoConcurridoEnEventos();
+            miTiempoEvento.CalculaTiempoConcurridoEnEventos();
         }
-
         public void lecturaTituloEvento(string tituloEvento)
         {
             Console.Write(tituloEvento+"");
             //return tituloEvento;
         }
-        
         public DateTime getFechaActual()
         {
             DateTime miFecha = DateTime.Now;
-                       
             return miFecha;
         }
-        
     }
 }
