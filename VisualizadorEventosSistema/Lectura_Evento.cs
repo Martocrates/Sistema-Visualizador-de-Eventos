@@ -23,8 +23,6 @@ namespace VisualizadorEventosSistema
             int diferenciaMinutos = dateTimeEvento.Minute - dateTimeActual.Minute;
 
             miTiempoEvento.setDiferenciaHoraria(diferenciaMeses, diferenciaDias, diferenciaHoras, diferenciaMinutos);
-
-            miTiempoEvento.CalculaTiempoConcurridoEnEventos();
         }
         public void lecturaTituloEvento(string tituloEvento)
         {

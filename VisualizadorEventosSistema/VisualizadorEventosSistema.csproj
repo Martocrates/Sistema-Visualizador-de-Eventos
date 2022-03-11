@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CalculaTiempo.cs" />
     <Compile Include="Datos_Evento.cs" />
+    <Compile Include="ImpresionPantalla.cs" />
     <Compile Include="Lectura_ArchivoTXT.cs" />
     <Compile Include="Lectura_Evento.cs" />
     <Compile Include="Program.cs" />

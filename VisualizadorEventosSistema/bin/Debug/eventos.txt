@@ -2,5 +2,3 @@ Sesión de Couch Buenas prácticas, 03/03/2022
 Sesión de SOLID, 07/03/2022 09:00
 Año Nuevo, 01/01/2022 00:01
 Terminacion de programa, 07/03/2022 17:45
-
-Terminacion de programa, 07-03-2022 17:45

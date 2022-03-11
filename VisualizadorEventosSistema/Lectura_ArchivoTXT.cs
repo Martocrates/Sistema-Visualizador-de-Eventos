@@ -5,15 +5,20 @@ namespace VisualizadorEventosSistema
 {
     public class Lectura_ArchivoTXT
     {
-      ArrayList lineasArchivoTXT = new ArrayList();      
-        public void lecturaArchivo(string NombreArchivo)
+      ArrayList lineasArchivoTXT = new ArrayList();
+        string nombreArchivo;
+        string extensionArchivo;
+        
+        string linea;
+
+        public Lectura_ArchivoTXT(string NombreArchivo, string ExtensionArchivo)
         {
-            string ArchivoNombre;
-            ArchivoNombre = NombreArchivo;
-            string linea;
+            extensionArchivo = ExtensionArchivo;
+            nombreArchivo = NombreArchivo;
+
             try
             {
-                StreamReader miLector = new StreamReader(ArchivoNombre+".txt");
+                StreamReader miLector = new StreamReader(nombreArchivo + extensionArchivo);
                 do
                 {
                     linea = miLector.ReadLine();
@@ -30,9 +35,12 @@ namespace VisualizadorEventosSistema
             }
             finally
             {
-               // Console.WriteLine("Executing finally block.");
+                // Console.WriteLine("Executing finally block.");
             }
         }
+      
+
+
         public ArrayList getArrayListLineasArchivoTXT()
         {
             return lineasArchivoTXT;
