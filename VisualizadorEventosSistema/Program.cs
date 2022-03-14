@@ -6,12 +6,19 @@ namespace VisualizadorEventosSistema
     {
         static void Main(string[] args)
         {
-            CalculaTiempo miTiempoEvento = new CalculaTiempo();
-            Lectura_ArchivoTXT miArchivoEventos = new Lectura_ArchivoTXT("eventos", ".txt");
-            Lectura_Evento informacionEvento = new Lectura_Evento(miTiempoEvento);
-            SeparadorFechasEventos informacionMiEvento = new SeparadorFechasEventos(miArchivoEventos,informacionEvento);
-            
+        
+            string nombreArchivo="eventos";
+            string extensionArchivo =".txt";
 
+            LecturaArchivo recuperador = new LecturaArchivo(nombreArchivo, extensionArchivo);
+            ImpresionConsola visualizadorConsola = new ImpresionConsola();
+            ProcesadorDatos procesadorTiempo = new ProcesadorDatos(visualizadorConsola);
+            RecuperadorEventos procesadorEvento = new RecuperadorEventos(procesadorTiempo);
+            AppEventos application = new AppEventos(recuperador,procesadorEvento);
+
+
+            application.start();
+           
             Console.ReadLine();
         }
     }
